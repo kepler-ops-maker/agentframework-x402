@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AgentRails.AgentFramework.X402/AgentRails.AgentFramework.X402.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AgentRails.AgentFramework.X402.Tests/AgentRails.AgentFramework.X402.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -155,9 +155,16 @@ The package exposes three AI functions:
 
 MIT — see [LICENSE](LICENSE)
 
+## Related Packages
+
+- [AgentRails.SemanticKernel.X402](https://www.nuget.org/packages/AgentRails.SemanticKernel.X402) - x402 for Semantic Kernel (.NET)
+- [langchain-x402](https://pypi.org/project/langchain-x402/) - x402 integration for LangChain (Python)
+- [crewai-x402](https://pypi.org/project/crewai-x402/) - x402 integration for CrewAI (Python)
+
 ## Links
 
+- [AgentRails](https://www.agentrails.io) - AI agent payment infrastructure
+- [AgentRails Documentation](https://www.agentrails.io/docs)
 - [x402 Protocol](https://www.x402.org/)
-- [AgentRails](https://www.agentrails.io)
 - [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI)
 - [Semantic Kernel version](https://www.nuget.org/packages/AgentRails.SemanticKernel.X402)

@@ -1,0 +1,141 @@
+{
+  "url": "https://proof-random-x402-sepolia.pn-26f.workers.dev/v1/random?nonce=integration-fixture-readonly",
+  "challenge": {
+    "x402Version": 2,
+    "error": "Payment required",
+    "resource": {
+      "url": "https://proof-random-x402-sepolia.pn-26f.workers.dev/v1/random?nonce=integration-fixture-readonly",
+      "description": "Testnet-only public drand quicknet beacon sample; latest round may already be known, not a future draw or a private VRF",
+      "mimeType": "application/json",
+      "serviceName": "Proof Random testnet",
+      "tags": [
+        "testnet",
+        "drand",
+        "randomness"
+      ]
+    },
+    "accepts": [
+      {
+        "scheme": "exact",
+        "network": "eip155:84532",
+        "amount": "1000",
+        "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+        "payTo": "0x5a844e7871e0CD7DcF080046E3c17D0C637cd58B",
+        "maxTimeoutSeconds": 300,
+        "extra": {
+          "name": "USDC",
+          "version": "2"
+        }
+      }
+    ],
+    "extensions": {
+      "bazaar": {
+        "info": {
+          "input": {
+            "type": "http",
+            "method": "GET",
+            "queryParams": {
+              "nonce": "agent-request-123"
+            }
+          },
+          "output": {
+            "type": "json",
+            "example": {
+              "nonce": "agent-request-123",
+              "value": 3,
+              "range": [
+                0,
+                6
+              ],
+              "round": 12345678,
+              "blsVerified": true,
+              "upstreamBlsVerified": false
+            }
+          }
+        },
+        "schema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "input": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "const": "http"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ]
+                },
+                "queryParams": {
+                  "type": "object",
+                  "properties": {
+                    "nonce": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128,
+                      "description": "Unique printable ASCII request ID; binds sample to latest public drand round, not a future-round commitment."
+                    }
+                  },
+                  "required": [
+                    "nonce"
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "method"
+              ],
+              "additionalProperties": false
+            },
+            "output": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "example": {
+                  "type": "object",
+                  "properties": {
+                    "nonce": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 5
+                    },
+                    "range": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    },
+                    "round": {
+                      "type": "integer"
+                    },
+                    "blsVerified": {
+                      "type": "boolean"
+                    },
+                    "upstreamBlsVerified": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "type"
+              ]
+            }
+          },
+          "required": [
+            "input"
+          ]
+        }
+      }
+    }
+  }
+}
